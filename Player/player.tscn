@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0kgm2qurq3am"]
+[gd_scene load_steps=9 format=3 uid="uid://c0kgm2qurq3am"]
 
 [ext_resource type="Texture2D" uid="uid://bhym0rsyoypjm" path="res://NinjaAdventure/Actor/Characters/GreenNinja/SpriteSheet.png" id="1_6b6pv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnogm"]
+size = Vector2(14, 4)
 
 [sub_resource type="Animation" id="Animation_3eapp"]
 length = 0.001
@@ -99,9 +102,16 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_lnogm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_6b6pv")
+offset = Vector2(0, -8)
 hframes = 4
 vframes = 7
 
